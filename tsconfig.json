@@ -1,9 +1,0 @@
-{
-  "extends": "cozy-tsconfig",
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules"],
-  "compilerOptions": {
-    "emitDeclarationOnly": false,
-    "noEmit": true,
-  }
-}

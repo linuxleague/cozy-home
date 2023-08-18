@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useRef } from 'react'
 import memoize from 'lodash/memoize'
-
+import uniqBy from 'lodash/uniqBy'
 import { useQuery } from 'cozy-client'
 import flag from 'cozy-flags'
 import Divider from 'cozy-ui/transpiled/react/Divider'
@@ -47,10 +47,10 @@ const getApplicationsList = memoize(data => {
         !homeConfig.filteredApps.includes(app.slug) &&
         !flag(`home_hidden_apps.${app.slug.toLowerCase()}`) // can be set in the context with `home_hidden_apps: - drive - banks`for example
     )
+    const dedupapps = uniqBy(apps, 'slug')
+    const array = dedupapps.map(app => <AppTile key={app.id} app={app} />)
 
-    const array = apps.map(app => <AppTile key={app.id} app={app} />)
-
-    array.push(<BackupAppHighlightAlert apps={apps} />)
+    array.push(<BackupAppHighlightAlert apps={dedupapps} />)
 
     return array
   } else {

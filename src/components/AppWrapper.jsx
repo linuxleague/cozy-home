@@ -1,5 +1,3 @@
-/* global __DEVELOPMENT__ */
-
 import React, { createContext } from 'react'
 import { Provider as ReduxProvider } from 'react-redux'
 import memoize from 'lodash/memoize'

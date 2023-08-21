@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { translate } from 'cozy-ui/transpiled/react/I18n'
 import IconSprite from 'cozy-ui/transpiled/react/Icon/Sprite'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
-import { Routes as HarvestRoutes } from 'cozy-harvest-lib'
 
 import appEntryPoint from 'components/appEntryPoint'
 import IntentService from 'containers/IntentService'
@@ -62,7 +61,7 @@ class IntentHandler extends Component {
 
   render() {
     // const { data } = this.props
-    const { appData, accounts, konnectors, triggers, t, data } = this.props
+    const { appData, accounts, konnectors, triggers, t } = this.props
     const { error, service } = this.state
     let { isInitializing } = this.state
 

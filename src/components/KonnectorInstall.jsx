@@ -40,6 +40,8 @@ export class KonnectorInstall extends Component {
   }
 
   render() {
+    console.log('KonnectorInstall')
+
     const {
       account,
       konnector,
@@ -53,7 +55,8 @@ export class KonnectorInstall extends Component {
     } = this.props
 
     const { trigger, success } = this.state
-
+    console.log('success', success)
+    console.log('legacySuccess', legacySuccess)
     if (success || legacySuccess) {
       return (
         <KonnectorSuccess
@@ -68,7 +71,6 @@ export class KonnectorInstall extends Component {
         />
       )
     }
-
     return (
       <div className={styles['col-account-connection-content']}>
         <div className={styles['col-account-connection-form']}>

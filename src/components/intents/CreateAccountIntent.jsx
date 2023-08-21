@@ -17,8 +17,10 @@ class CreateAccountIntent extends Component {
   }
 
   render() {
+    console.log('CREATE ACCOUNT INTENT ???')
     const { konnector, onCancel, onTerminate } = this.props
     const { isSuccess } = this.state
+    console.log('isSuccess', isSuccess)
     return (
       <div className="col-create-account-intent">
         {!isSuccess && <KonnectorHeaderIcon konnector={konnector} center />}

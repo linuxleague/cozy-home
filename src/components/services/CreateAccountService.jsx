@@ -6,8 +6,6 @@ import { translate } from 'cozy-ui/transpiled/react/I18n'
 import AccountConnection from 'containers/AccountConnection'
 import {
   endConnectionCreation,
-  isConnectionRunning,
-  isCreatingConnection,
   startConnectionCreation
 } from 'ducks/connections'
 import {
@@ -28,6 +26,7 @@ class CreateAccountService extends React.Component {
 
   render() {
     const { t } = this.props
+    console.log('CREATE ACCOUNT SERVICE')
     return (
       <div className="coz-service-content">
         <AccountConnection
@@ -51,8 +50,6 @@ const mapStateToProps = (state, ownProps) => {
   )
   return {
     createdAccount,
-    isCreating: isCreatingConnection(state.connections),
-    isRunning: isConnectionRunning(state.connections, trigger),
     trigger
   }
 }
